@@ -1,0 +1,18 @@
+{% extends "admin/loans/loanoffer/base.html" %}
+{% load i18n %}
+{% load admin_urls %}
+
+{% block breadcrumbs_last %}
+    <a href="{% url 'admin:loans_loanoffer_change' offer_id %}">{{ offer_name }}</a>
+    &rsaquo; {% trans "Accept" %}
+{% endblock %}
+
+{% block content %}
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form }}
+        <div class="submit-row">
+            <input type="submit" class="default" value="{% trans "Accept Offer" %}">
+        </div>
+    </form>
+{% endblock %}

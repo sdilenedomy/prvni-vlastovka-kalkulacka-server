@@ -1,0 +1,32 @@
+{% extends "admin/base_site.html" %}
+
+{% load static %}
+{% load i18n %}
+
+{% load i18n_switcher %}
+
+{% block extrahead %}
+    <style>
+        .lang-flag {
+            text-decoration: none;
+            margin-bottom: -3px;
+            padding-right: 2px;
+            width: 20px;
+        }
+    </style>
+{% endblock %}
+
+{% block userlinks %}
+    {{ block.super }} /
+    {% get_available_languages as available_languages %}
+    {% get_language_info_list for available_languages as langs %}
+    <span>
+    {% for lang in langs %}
+        {% with 'language_switcher/img/'|add:lang.code|add:'.png' as flag_url %}
+            <a href="{{ request|switch_i18n:lang.code }}">
+                <img class="lang-flag" src="{% static flag_url %}" alt="{{ lang.name_local }}">
+            </a>
+        {% endwith %}
+    {% endfor %}
+    </span>
+{% endblock %}

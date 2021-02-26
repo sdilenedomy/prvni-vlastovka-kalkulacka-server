@@ -1,0 +1,25 @@
+{% extends 'admin/change_form.html' %}
+{% block extrahead %}
+    {{ block.super }}
+    <style>
+        .submit-row p.acceptlink-box {
+            float: left;
+            margin: 0;
+        }
+
+        .submit-row a.acceptlink {
+            display: block;
+            background: #4c8b1e;
+            border-radius: 4px;
+            padding: 10px 15px;
+            height: 15px;
+            line-height: 15px;
+            color: #fff;
+            margin: 0 8px 0;
+            text-decoration: none;
+        }
+        .submit-row a.acceptlink:hover, .submit-row a.acceptlink:focus, .submit-row a.acceptlink:active {
+            background: #2f7000;
+        }
+    </style>
+{% endblock %}
