@@ -9,7 +9,7 @@ Přidává možnost uživatelovi přepnout jazyk v administračním prostředí 
 Jazyky lze přidat úpravou `LANGUAGES` v settings.py a přidáním příslušené vlaječky do `language_switcher/static/img`.
 
 ### Loans
-Aplikace pro správu půjček přidává do administračního prostředí (url `/admin`) nabídky a přijeté půjčky. Nabídku mohou uživatelé s oprávněním `accept_loanoffer` nahráním souboru s podepsanou smlouvou přijmout a přesunout ji tak mezi přijaté půjčky. Smlouvy jsou potom uživatelům s oprávněním k zobrazování přijatých půjček dostupné na adrese `/media/contracts/filename-smlouvy` nebo skrz administrační rozhraní.
+Aplikace pro správu půjček přidává do administračního prostředí (url `/admin`) nabídky a přijaté půjčky. Nabídku mohou uživatelé s oprávněním `accept_loanoffer` nahráním souboru s podepsanou smlouvou přijmout a přesunout ji tak mezi přijaté půjčky. Smlouvy jsou potom uživatelům s oprávněním k zobrazování přijatých půjček dostupné na adrese `/media/contracts/filename-smlouvy` nebo skrz administrační rozhraní.
 
 Na endpoint `/api` je možné bez autentifikace odeslat POST request a přidat tak nabídku na půjčku. 
 
