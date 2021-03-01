@@ -17,4 +17,4 @@ def serve_contract(request, filename):
 class ApiLoanOfferViewSet(viewsets.ModelViewSet):
     queryset = LoanOffer.objects.all()
     serializer_class = LoanOfferSerializer
-    http_method_names = ['post']
+    http_method_names = ['options', 'post']

@@ -22,6 +22,9 @@ Soubor settings.py načítá `SECRET_KEY` ze souboru `key.txt` z kořenového ad
 
 `python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())" > key.txt`
 
+#### hcaptcha.txt
+Secret key pro ověření hCaptchy očekáván v kořenovém adresáři projektu, lze ho získat z hCaptcha dashboardu.
+
 ### settings.py
 Před nasazením do produkce je možné zkontrolovat settings.py automaticky pomocí
 

@@ -40,12 +40,14 @@ INSTALLED_APPS = [
     'loans.apps.LoansConfig',
     'language_switcher.apps.LanguageSwitcherConfig',
     'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -144,3 +146,12 @@ if DEBUG:
 REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': DEFAULT_RENDERER_CLASSES
 }
+
+# Allow all origins for CORS in development
+
+if DEBUG:
+    CORS_ALLOW_ALL_ORIGINS = True
+
+# Load hCaptcha secret key
+
+HCAPTCHA_SECRET_KEY = open(os.path.join(BASE_DIR, 'hcaptcha.txt')).read()

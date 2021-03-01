@@ -1,9 +1,28 @@
+import requests
+from django.conf import settings
 from rest_framework import serializers
 
 from loans.models import LoanOffer
 
 
 class LoanOfferSerializer(serializers.ModelSerializer):
+    token = serializers.CharField(required=True, write_only=True)
+
     class Meta:
         model = LoanOffer
-        fields = '__all__'
+        exclude = ['responsible_person']
+
+    def validate_token(self, value):
+        hcaptcha_response = requests.post('https://hcaptcha.com/siteverify',
+                                          data={
+                                              'secret': settings.HCAPTCHA_SECRET_KEY,
+                                              'response': value
+                                          })
+        if not hcaptcha_response.json()['success']:
+            raise serializers.ValidationError("hCaptcha error")
+        return value
+
+    def create(self, validated_data):
+        if "token" in validated_data:
+            del validated_data["token"]
+        return LoanOffer.objects.create(**validated_data)
