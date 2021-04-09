@@ -18,7 +18,7 @@ class LoanOfferSerializer(serializers.ModelSerializer):
                                               'secret': settings.HCAPTCHA_SECRET_KEY,
                                               'response': value
                                           })
-        if not hcaptcha_response.json()['success']:
+        if not hcaptcha_response.json()['success'] and not settings.DEBUG:
             raise serializers.ValidationError("hCaptcha error")
         return value
 
