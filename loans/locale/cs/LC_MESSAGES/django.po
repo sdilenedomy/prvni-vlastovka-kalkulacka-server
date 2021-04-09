@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-20 20:00+0100\n"
+"POT-Creation-Date: 2021-04-10 01:38+0200\n"
 "PO-Revision-Date: 2021-02-20 19:58+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -18,20 +18,20 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n>=2 && n<=4 ? 1 : 2);\n"
 "X-Generator: Poedit 2.4.1\n"
 
-#: admin.py:62 templates/admin/loans/loanoffer/accept.html:15
+#: admin.py:99 templates/admin/loans/loanoffer/accept.html:15
 #: templates/admin/loans/loanoffer/submit_line.html:10
 msgid "Accept Offer"
 msgstr "Přijmout nabídku"
 
-#: admin.py:65
+#: admin.py:102
 msgid "Offer Actions"
 msgstr "Možnosti nabídky"
 
-#: admin.py:85
+#: admin.py:125
 msgid "The contract was uploaded and the loan was moved to accepted loans."
 msgstr "Smlouva byla nahrána a půjčka byla přesunuta mezi přijaté půjčky."
 
-#: admin.py:93
+#: admin.py:133
 #, python-format
 msgid "Accept offer %s"
 msgstr "Přijmout nabídku %s"
@@ -53,16 +53,16 @@ msgid "Loan amount"
 msgstr "Velikost půjčky"
 
 #: models.py:10
-msgid "one-time interest"
-msgstr "jednorázový úrok"
+msgid "repayment of both prinicipal and interest at the end"
+msgstr "úrok i jistina na konci"
 
 #: models.py:11
-msgid "yearly interest"
-msgstr "roční úročení"
+msgid "yearly repayment of interest, principal at the end"
+msgstr "úrok vyplácený po letech, jistina na konci"
 
 #: models.py:16
-msgid "interest type"
-msgstr "typ úroku"
+msgid "interest repayment type"
+msgstr "vyplácení úroku"
 
 #: models.py:22
 msgid "interest"
@@ -76,79 +76,41 @@ msgstr[0] "%d rok"
 msgstr[1] "%d roky"
 msgstr[2] "%d let"
 
-#: models.py:32
+#: models.py:33
 msgid "duration"
 msgstr "trvání"
 
-#: models.py:35
+#: models.py:36
 msgid "contact email"
 msgstr "kontaktní email"
 
-#: models.py:38
-#, python-format
-msgid "%(amount)s Kč for %(duration)s with %(interest_type)s of %(interest)s"
-msgstr ""
-"%(amount)s Kč na %(duration)s s úrokem %(interest)s (%(interest_type)s)"
-
-#: models.py:50
+#: models.py:46
 msgid "responsible person"
 msgstr "zodpovědná osoba"
 
-#: models.py:55
+#: models.py:51
 msgid "offer"
 msgstr "nabídka"
 
-#: models.py:56
+#: models.py:52
 msgid "offers"
 msgstr "nabídky"
 
-#: models.py:60
+#: models.py:59
 msgid "contract"
 msgstr "smlouva"
 
-#: models.py:63
+#: models.py:62
 msgid "accepted loan"
 msgstr "přijatá půjčka"
 
-#: models.py:64
+#: models.py:63
 msgid "accepted loans"
 msgstr "přijaté půjčky"
 
 #: templates/admin/loans/loanoffer/accept.html:7
 msgid "Accept"
 msgstr "Přijmout nabídku"
-
-#: templates/admin/loans/loanoffer/base.html:8
-msgid "Home"
-msgstr ""
-
-#: templates/admin/loans/loanoffer/submit_line.html:4
-msgid "Save"
-msgstr ""
-
-#: templates/admin/loans/loanoffer/submit_line.html:7
-msgid "Delete"
-msgstr ""
-
-#: templates/admin/loans/loanoffer/submit_line.html:12
-msgid "Save as new"
-msgstr ""
-
-#: templates/admin/loans/loanoffer/submit_line.html:13
-msgid "Save and add another"
-msgstr ""
-
-#: templates/admin/loans/loanoffer/submit_line.html:14
-msgid "Save and continue editing"
-msgstr ""
-
-#: templates/admin/loans/loanoffer/submit_line.html:14
-msgid "Save and view"
-msgstr ""
-
-#: templates/admin/loans/loanoffer/submit_line.html:15
-msgid "Close"
-msgstr ""
 
 msgid "Project Swallow calculator administration"
 msgstr "Správa kalkulačky První vlaštovky"

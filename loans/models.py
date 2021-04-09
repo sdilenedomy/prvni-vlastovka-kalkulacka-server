@@ -7,27 +7,28 @@ class Loan(models.Model):
     amount = models.IntegerField(verbose_name=_("Loan amount"))
 
     INTEREST_TYPE_OPTIONS = [
-        ('one-time', _('one-time interest')),
-        ('yearly', _('yearly interest'))
+        ('end', _('repayment of both prinicipal and interest at the end')),
+        ('yearly', _('yearly repayment of interest, principal at the end'))
     ]
     interest_type = models.CharField(
         choices=INTEREST_TYPE_OPTIONS,
         max_length=10,
-        verbose_name=_('interest type')
+        verbose_name=_('interest repayment type')
     )
 
     INTEREST_OPTIONS = [0, 0.5, 1, 1.5, 2, 2.5, 3]
     interest = models.FloatField(
-        choices=map(lambda i: (i, f"{str(i)}%"), INTEREST_OPTIONS),
+        choices=map(lambda i: (i, f"{str(i)} %"), INTEREST_OPTIONS),
         verbose_name=_('interest')
     )
 
-    DURATION_OPTIONS = [1, 2, 5, 10]
+    DURATION_OPTIONS = list(range(1, 16))
     DURATION_STRING = ngettext_lazy(
         '%d year',
         '%d years',
     )
     duration = models.IntegerField(
+
         choices=map(lambda i, dur_str=DURATION_STRING: (i, dur_str % i), DURATION_OPTIONS),
         verbose_name=_('duration')
     )

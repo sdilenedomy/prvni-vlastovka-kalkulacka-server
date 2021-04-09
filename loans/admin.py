@@ -31,6 +31,7 @@ class LoanAdmin(admin.ModelAdmin):
         'amount',
         'interest',
         'duration',
+        'interest_type',
         'contact_email',
     )
 
