@@ -26,9 +26,14 @@ class LoanResource(resources.ModelResource):
 
 
 class LoanAdmin(admin.ModelAdmin):
+    def amount_currency(self, obj):
+        return f"{obj.amount} {obj.currency}"
+
+    amount_currency.short_description = _('Loan amount')
+
     list_display = (
         '__str__',
-        'amount',
+        'amount_currency',
         'interest',
         'duration',
         'interest_type',
