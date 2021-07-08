@@ -25,7 +25,7 @@ SECRET_KEY = open(os.path.join(BASE_DIR, 'key.txt')).read()
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["192.168.0.16", "0.0.0.0"]
+ALLOWED_HOSTS = ["127.0.0.1", "192.168.0.16", "0.0.0.0"]
 
 # Application definition
 
@@ -74,6 +74,11 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'prvni_vlastovka_kalkulacka_server.wsgi.application'
+
+# Default primary key field type
+# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
+
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
