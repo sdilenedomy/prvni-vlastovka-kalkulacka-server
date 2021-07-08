@@ -71,7 +71,10 @@ class OfferResource(LoanResource):
     responsible_person = Field()
 
     def dehydrate_responsible_person(self, loan_offer):
-        return loan_offer.responsible_person.username
+        if loan_offer.responsible_person:
+            return loan_offer.responsible_person.username
+        else:
+            return ""
 
     class Meta:
         model = LoanOffer
