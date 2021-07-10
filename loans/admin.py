@@ -38,6 +38,7 @@ class LoanAdmin(admin.ModelAdmin):
         'duration',
         'interest_type',
         'contact_email',
+        'lender_language',
     )
 
 

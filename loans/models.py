@@ -45,6 +45,14 @@ class Loan(models.Model):
 
     contact_email = models.EmailField(verbose_name=_("contact email"))
 
+    LENDER_LANGUAGE_OPTIONS = settings.LANGUAGES
+    lender_language = models.CharField(
+        choices=LENDER_LANGUAGE_OPTIONS,
+        max_length=2,
+        verbose_name=_("lender language"),
+        default="cs"
+    )
+
     def __str__(self):
         return f'#{self.pk:05d}'
 

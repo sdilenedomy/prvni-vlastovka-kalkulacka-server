@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-14 00:15+0200\n"
+"POT-Creation-Date: 2021-07-10 23:48+0200\n"
 "PO-Revision-Date: 2021-02-20 19:58+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -18,20 +18,24 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n>=2 && n<=4 ? 1 : 2);\n"
 "X-Generator: Poedit 2.4.1\n"
 
-#: admin.py:100 templates/admin/loans/loanoffer/accept.html:15
+#: admin.py:32 models.py:7
+msgid "Loan amount"
+msgstr "Velikost půjčky"
+
+#: admin.py:108 templates/admin/loans/loanoffer/accept.html:15
 #: templates/admin/loans/loanoffer/submit_line.html:10
 msgid "Accept Offer"
 msgstr "Přijmout nabídku"
 
-#: admin.py:103
+#: admin.py:111
 msgid "Offer Actions"
 msgstr "Možnosti nabídky"
 
-#: admin.py:126
+#: admin.py:134
 msgid "The contract was uploaded and the loan was moved to accepted loans."
 msgstr "Smlouva byla nahrána a půjčka byla přesunuta mezi přijaté půjčky."
 
-#: admin.py:134
+#: admin.py:142
 #, python-format
 msgid "Accept offer %s"
 msgstr "Přijmout nabídku %s"
@@ -48,31 +52,27 @@ msgstr "Nahrajte veřitelem podepsanou smlouvu"
 msgid "Contract"
 msgstr "Smlouva"
 
-#: models.py:7
-msgid "Loan amount"
-msgstr "Velikost půjčky"
-
 #: models.py:15
 msgid "currency"
 msgstr "měna"
 
-#: models.py:20
+#: models.py:21
 msgid "repayment of both prinicipal and interest at the end"
 msgstr "úrok i jistina na konci"
 
-#: models.py:21
+#: models.py:22
 msgid "yearly repayment of interest, principal at the end"
 msgstr "úrok vyplácený po letech, jistina na konci"
 
-#: models.py:26
+#: models.py:27
 msgid "interest repayment type"
 msgstr "vyplácení úroku"
 
-#: models.py:32
+#: models.py:33
 msgid "interest"
 msgstr "úrok"
 
-#: models.py:37
+#: models.py:38
 #, python-format
 msgid "%d year"
 msgid_plural "%d years"
@@ -88,27 +88,31 @@ msgstr "trvání"
 msgid "contact email"
 msgstr "kontaktní email"
 
-#: models.py:56
+#: models.py:52
+msgid "lender language"
+msgstr "jazyk věřitele"
+
+#: models.py:64
 msgid "responsible person"
 msgstr "zodpovědná osoba"
 
-#: models.py:61
+#: models.py:70
 msgid "offer"
 msgstr "nabídka"
 
-#: models.py:62
+#: models.py:71
 msgid "offers"
 msgstr "nabídky"
 
-#: models.py:69
+#: models.py:78
 msgid "contract"
 msgstr "smlouva"
 
-#: models.py:72
+#: models.py:81
 msgid "accepted loan"
 msgstr "přijatá půjčka"
 
-#: models.py:73
+#: models.py:82
 msgid "accepted loans"
 msgstr "přijaté půjčky"
 
