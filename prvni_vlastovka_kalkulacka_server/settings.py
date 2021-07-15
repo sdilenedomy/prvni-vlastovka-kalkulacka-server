@@ -160,3 +160,15 @@ if DEBUG:
 # Load hCaptcha secret key
 
 HCAPTCHA_SECRET_KEY = open(os.path.join(BASE_DIR, 'hcaptcha.txt')).read()
+
+# Emails
+
+EMAIL_FROM = "finance@sdilenedomy.cz",
+
+if DEBUG:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+else:
+    # See: https://docs.djangoproject.com/en/3.2/topics/email/#smtp-backend
+    # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+    print("WARNING: No SMTP server configured, no email will be sent")

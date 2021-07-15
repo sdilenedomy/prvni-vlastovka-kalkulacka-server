@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="{{ offer.lender_language }}">
+<head>
+    <title>We've received a loan offer from you – First Swallow</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+<body>
+<p>
+    Hello,<br>
+    <br>
+    we've received a loan offer from you. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi imperdiet,
+    mauris ac auctor dictum, nisl ligula egestas nulla, et sollicitudin sem purus in lacus. Mauris elementum mauris
+    vitae tortor. Aliquam erat volutpat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
+    ridiculus mus. Vivamus luctus egestas leo. Suspendisse nisl. Aenean placerat. Praesent in mauris eu tortor porttitor
+    accumsan. Nulla turpis magna, cursus sit amet, suscipit a, interdum id, felis. In convallis.
+</p>
+<p>Here are the details:</p>
+<table>
+    <tr>
+        <th>Loan amount</th>
+        <td>{{ offer.amount }} {{ offer.currency }}</td>
+    </tr>
+    <tr>
+        <th>Interest</th>
+        <td>{{ offer.get_interest_display }}</td>
+    </tr>
+    <tr>
+        <th>Duration</th>
+        <td>{{ offer.get_duration_display }}</td>
+    </tr>
+    <tr>
+        <th>Repayment</th>
+        <td>{{ offer.get_interest_display }}</td>
+    </tr>
+</table>
+<p>
+    Phasellus rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam in
+    lorem sit amet leo accumsan lacinia. Integer tempor.
+</p>
+<p>This email was sent automatically.</p>
+</body>
+</html>

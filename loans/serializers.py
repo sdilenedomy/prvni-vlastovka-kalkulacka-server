@@ -2,6 +2,7 @@ import requests
 from django.conf import settings
 from rest_framework import serializers
 
+from loans.emails import send_new_offer_email
 from loans.models import LoanOffer
 
 
@@ -25,4 +26,8 @@ class LoanOfferSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         if "token" in validated_data:
             del validated_data["token"]
-        return LoanOffer.objects.create(**validated_data)
+
+        offer = LoanOffer.objects.create(**validated_data)
+        send_new_offer_email(offer)
+
+        return offer
