@@ -1,0 +1,62 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="cs">
+{% language 'cs' %}
+<head>
+    <title>Informace k přímé půjčce pro První vlaštovku</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+<body>
+<p>
+    Vážená potenciální věřitelko, vážený potenciální věřiteli,<br>
+    <br>
+    moc děkujeme za nabídku přímé půjčky sociálnímu družstvu První vlaštovka!
+</p>
+<p>Posíláme shrnutí Vaší nabídky a informace o dalším postupu:</p>
+<table>
+    <tr>
+        <th>Částka:</th>
+        <td>{{ offer.amount }} {{ offer.currency }}</td>
+    </tr>
+    <tr>
+        <th>Úrok:</th>
+        <td>{{ offer.get_interest_display }}</td>
+    </tr>
+    <tr>
+        <th>Doba trvání:</th>
+        <td>{% trans offer.get_duration_display %}</td>
+    </tr>
+    <tr>
+        <th>Splácení úroku:</th>
+        <td>{% trans offer.get_interest_type_display %}</td>
+    </tr>
+</table>
+<p>
+    Pokud všechno sedí, odpovězte prosím na tento email a pošlete nám svoje nacionále, abychom Vám mohli vypracovat smlouvu k podepsání. Budeme od Vás potřebovat:<br>
+    - Jméno a příjmení<br>
+    - Datum narození<br>
+    - Adresu trvalého pobytu<br>
+    - Číslo účtu, kam máme peníze po uplynutí období s úrokem vrátit.<br>
+    <br>
+    Vše do smlouvy doplníme, podepíšeme ji za nás a pošleme Vám ji k podepsání. Smlouva je platná i oskenovaná, vše tedy lze vyřešit na dálku. Jestli jste z Prahy, můžeme se sejít i osobně, případně Vám smlouvu zašleme ve dvou kopiích poštou se zpáteční obálkou.<br>
+    <br>
+    V případě jakýchkoliv nesrovnalostí, dotazů či připomínek nás neváhejte kontaktovat na e-mailu či telefonicky na +420776381312.<br>
+    <br>
+    Ještě jednou díky.<br>
+    <br>
+    S pozdravem<br>
+    <br>
+    kolektiv Sdílených domů a družstva První vlaštovka<br>
+    <br>
+    Sdílené domy z. s.<br>
+    info@sdilenedomy.cz<br>
+    +420776381312<br>
+    <br>
+    Šumberova 342/20<br>
+    Veleslavín / 162 00 – Praha 6<br>
+</p>
+</body>
+{% endlanguage %}
+</html>

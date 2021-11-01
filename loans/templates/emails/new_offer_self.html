@@ -1,0 +1,38 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="cs">
+{% language 'cs' %}
+<head>
+    <title>Nová půjčka z kalkulačky: {{ offer.amount }} {{ offer.currency }}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+<body>
+<p>
+    Uživatel {{ offer.contact_email }} nabízí půjčku {{ offer.amount }} {{ offer.currency }}.
+</p>
+<table>
+    <tr>
+        <th>Částka:</th>
+        <td>{{ offer.amount }} {{ offer.currency }}</td>
+    </tr>
+    <tr>
+        <th>Úrok:</th>
+        <td>{{ offer.get_interest_display }}</td>
+    </tr>
+    <tr>
+        <th>Doba trvání:</th>
+        <td>{% trans offer.get_duration_display %}</td>
+    </tr>
+    <tr>
+        <th>Splácení úroku:</th>
+        <td>{% trans offer.get_interest_type_display %}</td>
+    </tr>
+</table>
+<p>
+    Nabídka odeslána: {{ timestamp }}
+</p>
+</body>
+{% endlanguage %}
+</html>

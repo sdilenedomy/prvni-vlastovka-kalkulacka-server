@@ -1,4 +1,5 @@
 import re
+from datetime import datetime
 
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
@@ -19,12 +20,25 @@ def generate_email_content(template, context):
 
 
 def send_new_offer_email(offer):
-    html_content, plain_content = generate_email_content("emails/new_offer.html", {"offer": offer})
+    # send email to client
+    html_content, plain_content = generate_email_content("emails/new_offer_client.html", {"offer": offer})
 
     send_mail(
-        "We've received a loan offer from you – First Swallow",
+        "Informace k přímé půjčce pro První vlaštovku",
         plain_content,
-        settings.EMAIL_FROM,
+        settings.EMAIL_FINANCE,
         [offer.contact_email],
+        html_message=html_content
+    )
+
+    # send email to self
+    html_content, plain_content = generate_email_content("emails/new_offer_self.html", {"offer": offer,
+                                                                                        "timestamp": datetime.now()})
+
+    send_mail(
+        f"Nová půjčka z kalkulačky: {offer.amount} {offer.currency}",
+        plain_content,
+        settings.EMAIL_FINANCE,
+        [settings.EMAIL_FINANCE],
         html_message=html_content
     )
