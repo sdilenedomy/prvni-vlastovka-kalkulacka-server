@@ -163,7 +163,7 @@ HCAPTCHA_SECRET_KEY = open(os.path.join(BASE_DIR, 'hcaptcha.txt')).read()
 
 # Email
 
-EMAIL_FINANCE = "finance@sdilenedomy.cz",
+EMAIL_FINANCE = "finance@sdilenedomy.cz"
 
 if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
