@@ -1,0 +1,67 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+{% language 'en' %}
+    <head>
+        <title>Information about a direct loan to První Vlaštovka</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+    <p>
+        Dear prospective lender,<br>
+        <br>
+        Thank you very much for offering a direct loan to the První Vlaštovka Social Cooperative!
+    </p>
+    <p>Here is a summary of your offer and information on how to proceed:</p>
+    <table>
+        <tr>
+            <th>Amount:</th>
+            <td>{{ offer.amount }} {{ offer.currency }}</td>
+        </tr>
+        <tr>
+            <th>Interest:</th>
+            <td>{{ offer.get_interest_display }}</td>
+        </tr>
+        <tr>
+            <th>Duration:</th>
+            <td>{% trans offer.get_duration_display %}</td>
+        </tr>
+        <tr>
+            <th>Interest repayment:</th>
+            <td>{% trans offer.get_interest_type_display %}</td>
+        </tr>
+    </table>
+    <p>
+        If this is correct, please reply to this email and let us know your personal information that we need to draft
+        a contract. We need to know the following:<br>
+        - Name and surname<br>
+        - Date of birth<br>
+        - Permanent residence address<br>
+        - Bank account number to which we will repay the loan and interest<br>
+        <br>
+        Once we have this information, we will add it to the contract, sign it for our side and send it to you for your
+        signature. A scanned copy of the contract is also valid and thus we can finish everything remotely. If you are
+        from Prague, we can also meet you in person. Alternatively, we can send you two copies of the contract by post
+        with a return envelope.<br>
+        <br>
+        In case of any discrepancies, questions, or comments, please do not hesitate to contact us by email or phone at
+        +420776381312.<br>
+        <br>
+        Kind regards,<br>
+        <br>
+        S pozdravem<br>
+        <br>
+        The collective of Sdílené Domy and the První Vlaštovka Cooperative<br>
+        <br>
+        Sdílené domy z. s.<br>
+        info@sdilenedomy.cz<br>
+        +420776381312<br>
+        <br>
+        Šumberova 342/20<br>
+        Veleslavín / 162 00 – Praha 6<br>
+    </p>
+    </body>
+{% endlanguage %}
+</html>

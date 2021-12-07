@@ -157,3 +157,7 @@ msgstr "Správa kalkulačky První vlaštovky"
 
 msgid "Project Swallow calculator admin"
 msgstr "Správa kalkulačky První vlaštovky"
+
+msgid "Information about a direct loan to První Vlaštovka"
+msgstr "Informace k přímé půjčce pro První vlaštovku"
+

@@ -7,6 +7,13 @@ from django.utils.html import strip_tags
 
 from prvni_vlastovka_kalkulacka_server import settings
 
+from django.utils import translation
+
+
+def get_translation_in(language, s):
+    with translation.override(language):
+        return translation.gettext(s)
+
 
 def generate_email_content(template, context):
     html_content = render_to_string(template, context)
@@ -21,10 +28,13 @@ def generate_email_content(template, context):
 
 def send_new_offer_email(offer):
     # send email to client
-    html_content, plain_content = generate_email_content("emails/new_offer_client.html", {"offer": offer})
+    html_content, plain_content = generate_email_content(f"emails/new_offer_client_{offer.lender_language}.html",
+                                                         {"offer": offer})
+
+    subject = get_translation_in(offer.lender_language,"Information about a direct loan to První Vlaštovka")
 
     send_mail(
-        "Informace k přímé půjčce pro První vlaštovku",
+        subject,
         plain_content,
         settings.EMAIL_FINANCE,
         [offer.contact_email],
