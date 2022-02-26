@@ -5,6 +5,7 @@
         .submit-row p.acceptlink-box {
             float: left;
             margin: 0;
+            order: 3
         }
 
         .submit-row a.acceptlink {
@@ -15,9 +16,15 @@
             height: 15px;
             line-height: 15px;
             color: #fff;
-            margin: 0 8px 0;
             text-decoration: none;
         }
+
+        @media (min-width: 767px) {
+            .submit-row a.acceptlink {
+                margin-left: 8px;
+            }
+        }
+
         .submit-row a.acceptlink:hover, .submit-row a.acceptlink:focus, .submit-row a.acceptlink:active {
             background: #2f7000;
         }
