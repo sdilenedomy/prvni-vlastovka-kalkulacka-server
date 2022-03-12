@@ -1,0 +1,66 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="cs">
+{% language 'cs' %}
+    <head>
+        <title>Information zum Direktdarlehen für Prvni Vlaštovka</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+    <p>
+        Liebe potezielle Gläubigerin, lieber potenzieller Gläubiger,<br>
+        <br>
+        herzlichen Dank für das Direktdarlehensangebot für die Soziale Genossenschaft První Vlaštovka!
+    </p>
+    <p>Hier der Überblick über Dein Angebot und Infos über die nächsten Schritte:</p>
+    <table>
+        <tr>
+            <th>Höhe:</th>
+            <td>{{ offer.amount }} {{ offer.currency }}</td>
+        </tr>
+        <tr>
+            <th>Zins:</th>
+            <td>{{ offer.get_interest_display }}</td>
+        </tr>
+        <tr>
+            <th>Dauer:</th>
+            <td>{% trans offer.get_duration_display %}</td>
+        </tr>
+        <tr>
+            <th>Zinsrückzahlung:</th>
+            <td>{% trans offer.get_interest_type_display %}</td>
+        </tr>
+    </table>
+    <p>
+        Wenn alles so stimmt, schicke uns bitte noch die erforderlichen Daten an diese E-Mail-Adresse, 
+        damit wir den Vertrag zur Unterschrift vorbereiten können:<br>
+        - Vor- und Nachname<br>
+        - Geburtsdatum<br>
+        - Adresse<br>
+        - Kontodaten (IBAN und BIC) zur Rückzahlung.<br>
+        <br>
+        Wir fügen die Daten in den Vertrag ein, unterschreiben ihn unsererseits und schicken ihn Dir, 
+        damit auch Du ihn unterschreiben kannst. Der Vertrag ist auch als Scan gültig. 
+        Alternativ können wir ihn, wenn Du in Prag wohnst, auch persönlich abschließen bzw. schicken ihn Dir in doppelter Ausführung per Post.<br>
+        <br>
+        Bei Fragen oder Anmerkungen kontaktiere uns gerne per Mail oder telefonisch unter
+        +420776381312.<br>
+        <br>
+        Noch einmal vielen Dank.<br>
+        <br>
+        Viele Grüße<br>
+        <br>
+        Kollektiv Sdilene Domy und Genossenschaft Prvni Vlaštovka<br>
+        <br>
+        Sdílené domy z. s.<br>
+        info@sdilenedomy.cz<br>
+        +420776381312<br>
+        <br>
+        Šumberova 342/20<br>
+        Veleslavín / 162 00 – Praha 6<br>
+    </p>
+    </body>
+{% endlanguage %}
+</html>
